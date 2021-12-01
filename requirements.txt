@@ -2,7 +2,6 @@ pandas
 streamlit
 plotly
 sklearn
-mpl_toolkits
 matplotlib
 re
 math
