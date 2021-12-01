@@ -41,7 +41,7 @@ class StreamlitApp:
         
         ingredients = st.sidebar.multiselect(
             'What ingredients would you like to use?',
-            cols2)
+            cols2
         )
             
         sepal_length = st.sidebar.selectbox(
