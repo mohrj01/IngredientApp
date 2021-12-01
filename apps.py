@@ -32,7 +32,7 @@ class StreamlitApp:
     def construct_sidebar(self):
 
         cols = [col for col in features.columns]
-        cols2 = ["water", "bread", "pumpkin"]
+        cols2 = ("water", "bread", "pumpkin")
 
         st.sidebar.markdown(
             '<p class="header-style">Iris Data Classification</p>',
