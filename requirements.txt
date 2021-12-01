@@ -3,6 +3,5 @@ streamlit
 plotly
 sklearn
 matplotlib
-re
 math
 scipy
