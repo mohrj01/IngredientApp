@@ -4,10 +4,7 @@ import matplotlib.pyplot as plt # plotting
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
-#%%
 
-nRowsRead = 1000 # specify 'None' if want to read whole file
-# clean_recipes.csv has 12351 rows in reality, but we are only loading/previewing the first 1000 rows
 
 df = pd.read_csv('https://github.com/mohrj01/IngredientApp/blob/main/clean_recipes.csv')
 df.head()
@@ -16,7 +13,6 @@ df.dataframeName = 'clean_recipes.csv'
 nRow, nCol = df.shape
 print(f'There are {nRow} rows and {nCol} columns')
 
-#%%
 
 # copy so don't overwrite both
 df1 = df.copy()
@@ -26,19 +22,12 @@ df1.columns = [c.replace(' ', '_') for c in df1.columns]
 df1 = df1[df1.Recipe_Name.str.contains('Cookie', case = False)]
 df1['Orig_Ingredients'] = df1['Ingredients']
         
-df1.shape
-
-
-#%%
 
 #https://stackoverflow.com/questions/54152673/python-function-to-loop-through-columns-to-replace-strings
-
 
 import re
 # removing all digits
 df1['Ingredients'] = df1['Ingredients'].str.replace('\d+', '')
-
-#''', '"',
 
 def myreplace(s):
     for ch in ['cups', 'cup', 'tablespoons', 'tablespoon', 'teaspoons', 'drops', 'drop ', 'teaspoon', 'pounds', 'pound','fluid ounce', 'ounces', 'ounce',  'fluid', 'dashes', 'dash', 'gallon', 'pinch', 
@@ -64,14 +53,11 @@ df1['Ingredients'] = df1['Ingredients'].str.replace(' ,', ',')
 df1['Ingredients'] = df1['Ingredients'].str.replace('"', '')
 
 
+#pd.set_option('display.width', None)
+#pd.set_option('display.max_colwidth', -1)
+#df1[df1['RecipeID'].isin([7936, 12821])]
 
-#%%
 
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', -1)
-df1[df1['RecipeID'].isin([7936, 12821])]
-
-#%%
 
 df1.Ingredients = df1.Ingredients.apply(str).str.split(",")
 
@@ -79,31 +65,6 @@ df1.Ingredients = df1.Ingredients.apply(str).str.split(",")
 #.add_prefix('ing_')
 df1 = df1[["Recipe_Name", "Total_Time", "Ingredients", "RecipeID", "Orig_Ingredients"]].join(df1.Ingredients.str.join('|').str.get_dummies())
 
-#%%
-
-#cleaning up
-# delete if have ":"
-# delete if all caps
-# delete "_to taste" from titles
-# delete numbers
-# delete tablespoons, cups, teasopoons (with/without s)
-# delete "large"
-# delete "small"
-# delte cubed, pounds, gram, packets, fuluid ounce, /
-# will have to condense similar items (before getting dummies > ie 6 tablespoons vs 3, dont care)
-
-# match based on approximate?
-# provide a list of all ingredients, mark 0 or 1?
-
-#%%
-
-df1.shape
-
-#%%
-
-df1.to_csv('final.csv', index = False)
-
-#%%
 
 # user input
 user_input = ['strawberry', 'egg', 'pecan']
@@ -117,9 +78,6 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 # show names
 # show missing ingredients from each one
 
-my_in
-
-#%%
 
 # if set na to -1, then  if recepie does not require ingredient: penalize 1
 #                         if recepie has ingredient: penalize 2
@@ -137,21 +95,12 @@ df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
 #df2 = df2.append(my_in).fillna(0)
 
-#%%
-
-df2
-
-#%%
-
 distance_columns = list(df2.columns.values)
 distance_columns = distance_columns[5:]
 
 #distance_columns = ['butter', 'salt', 'pecan']
 selected_player = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
               
-
-
-#%%
 
 import math
 
@@ -164,7 +113,6 @@ def euclidean_distance(row):
 
 lebron_distance = df2.apply(euclidean_distance, axis=1)
 
-#%%
 
 #https://www.dataquest.io/blog/k-nearest-neighbors-in-python/
 
@@ -181,9 +129,9 @@ distance_frame.sort_values("dist", inplace = True)
 second_smallest = distance_frame.iloc[1]["idx"]
 most_similar_to_lebron = df2.loc[int(second_smallest)]["Recipe_Name"]
 
-most_similar_to_lebron
+
 choice = df2[df2['Recipe_Name'] == most_similar_to_lebron]
-choice
+
 
 #%%
 
@@ -218,10 +166,10 @@ need_in = list(set(choice_in) - set(user_input))
 # ingredients you need to buy
 #list(set(choice).difference(user_input))
 
-print("Ingredients that match are:")
-print(match_in)
-print("Ingredients you still need are:")
-print(need_in)
+#print("Ingredients that match are:")
+#print(match_in)
+#print("Ingredients you still need are:")
+#print(need_in)
 
 
 
