@@ -2,7 +2,6 @@ pandas
 streamlit
 plotly
 sklearn
-os
 mpl_toolkits
 matplotlib
 re
