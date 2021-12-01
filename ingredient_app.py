@@ -19,7 +19,7 @@ df1 = df.copy()
 df1.columns = [c.replace(' ', '_') for c in df1.columns]
 
 # Only keeping cookies
-df1 = df1[df1.Recipe_Name.str.contains('Cookie', case = False)]
+df1 = df1[df1['Recipe_Name'].str.contains('Cookie', case = False)]
 df1['Orig_Ingredients'] = df1['Ingredients']
         
 
