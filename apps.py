@@ -32,11 +32,18 @@ class StreamlitApp:
     def construct_sidebar(self):
 
         cols = [col for col in features.columns]
+        cols2 = ["water", "bread", "pumpkin"]
 
         st.sidebar.markdown(
             '<p class="header-style">Iris Data Classification</p>',
             unsafe_allow_html=True
         )
+        
+        ingredients = st.sidebar.multiselect(
+            f"Select {cols2[0]}",
+            sorted(features[cols2[0]].unique())
+        )
+            
         sepal_length = st.sidebar.selectbox(
             f"Select {cols[0]}",
             sorted(features[cols[0]].unique())
