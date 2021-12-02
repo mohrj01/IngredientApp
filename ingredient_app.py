@@ -6,7 +6,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
 
 import warnings
-warnings.filterwarnings(‘ignore’)
+warnings.filterwarnings('ignore')
 
 df = pd.read_csv('https://github.com/mohrj01/IngredientApp/blob/main/clean_recipes.csv')
 df.head()
