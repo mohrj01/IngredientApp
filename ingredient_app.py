@@ -155,7 +155,10 @@ st.write('Directions:', choice['Directions'])
 
 choice_photo = '"'+choice['Recipe Photo']+'"'
 st.write(choice_photo)
-st.image(choice_photo)
+#st.image(choice_photo)
+
+img_bytes = Path(choice_photo).read_bytes()
+st.image(img_bytes)
 #%%
 
 # ingredients this choice has in common
