@@ -81,7 +81,7 @@ user_input = st.multiselect(
             distance_columns
         )
 
-st.write('You selected:', ingredients_input)
+st.write('You selected:', user_input)
 
 
 #user_input = ['strawberry', 'egg', 'pecan']
