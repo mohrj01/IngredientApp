@@ -152,7 +152,9 @@ choice = df[df['Recipe Name'] == most_similar_to_lebron]
 st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
+
 choice_photo = '"'+choice['Recipe Photo']+'"'
+st.write(choice_photo)
 st.image(choice_photo)
 #%%
 
