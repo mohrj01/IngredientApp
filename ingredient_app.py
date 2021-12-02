@@ -155,7 +155,7 @@ st.write('Directions:', choice['Directions'])
 
 
 choice_photo = choice['Recipe Photo'].to_string()
-choice_photo = ('"'+photo+'"')
+choice_photo = ('"'+choice_photo+'"')
 
 
 #choice_photo = ('"'+choice['Recipe Photo']+'"').to_string()
