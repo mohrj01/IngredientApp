@@ -74,7 +74,16 @@ df1 = df1[["Recipe_Name", "Total_Time", "Ingredients", "RecipeID", "Orig_Ingredi
 
 
 # user input
-user_input = ['strawberry', 'egg', 'pecan']
+
+user_input = st.multiselect(
+            'What ingredients would you like to use?',
+            distance_columns
+        )
+
+st.write('You selected:', ingredients_input)
+
+
+#user_input = ['strawberry', 'egg', 'pecan']
 #my_in = pd.DataFrame(my_in)
 my_in = pd.DataFrame(data ={'Recipe_Name': ["user input"], 'RecipeID': [0],  'Ingredients': [user_input]})
 
@@ -139,7 +148,7 @@ most_similar_to_lebron = df2.loc[int(second_smallest)]["Recipe_Name"]
 
 choice = df2[df2['Recipe_Name'] == most_similar_to_lebron]
 
-
+st.write('Recipe using the most ingredients:', choice)
 #%%
 
 # ingredients this choice has in common
@@ -178,6 +187,9 @@ need_in = list(set(choice_in) - set(user_input))
 #print("Ingredients you still need are:")
 #print(need_in)
 
+st.write('Ingredients that match are:', match_in)
+st.write('Ingredients you still need are:', need_in)
+
 
 
 
@@ -199,13 +211,6 @@ need_in = list(set(choice_in) - set(user_input))
 
 
 
-cols2 = ["water", "bread", "pumpkin"]
-userinput = st.text_input('What ingredients')
-ingredients_input = st.multiselect(
-            'What ingredients would you like to use?',
-            distance_columns
-        )
 
-st.write('You selected:', ingredients_input)
 #sa = StreamlitApp()
 #sa.construct_app()
