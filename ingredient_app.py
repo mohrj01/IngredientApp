@@ -203,7 +203,7 @@ cols2 = ["water", "bread", "pumpkin"]
 userinput = st.text_input('What ingredients')
 ingredients_input = st.multiselect(
             'What ingredients would you like to use?',
-            cols2
+            distance_columns
         )
 
 st.write('You selected:', ingredients_input)
