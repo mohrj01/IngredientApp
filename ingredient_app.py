@@ -147,7 +147,7 @@ second_smallest = distance_frame.iloc[1]["idx"]
 most_similar_to_lebron = df2.loc[int(second_smallest)]["Recipe_Name"]
 
 
-#choice = df2[df2['Recipe_Name'] == most_similar_to_lebron]
+choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_lebron]
 choice = df[df['Recipe Name'] == most_similar_to_lebron]
 st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
@@ -175,7 +175,7 @@ st.image(choice_photo)
 #%%
 
 # ingredients this choice has in common
-choice_in = choice['Ingredients']
+choice_in = choice_df2['Ingredients']
 # choice ingredients
 #choice_in = choice['Ingredients'].astype(str).values.tolist()
 #choice_in = choice['Ingredients'].tolist()
