@@ -198,36 +198,14 @@ need_in = list(set(choice_in) - set(user_input))
 # if only select 1 ingredient, will choose the recipe with the lowest amount of ingredints bc all of the 0s match...
 
 
-class StreamlitApp:
 
-
-    def construct_sidebar(self):
-
-        cols2 = ["water", "bread", "pumpkin"]
-
-        st.sidebar.markdown(
-            '<p class="header-style">Iris Data Classification</p>',
-            unsafe_allow_html=True
-        )
-        
-        ingredients = st.sidebar.multiselect(
-            'What ingredients would you like to use?',
-            cols2
-        )
-            
-    
-        
-        values = [user_input2]
-
-        return values
-
-        return self
- 
+cols2 = ["water", "bread", "pumpkin"]
 userinput = st.text_input('What ingredients')
 ingredients_input = st.multiselect(
             'What ingredients would you like to use?',
             cols2
         )
 
+st.write('You selected:', ingredients_input)
 #sa = StreamlitApp()
 #sa.construct_app()
