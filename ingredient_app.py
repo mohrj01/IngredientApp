@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt # plotting
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-
+import streamlit as st
 
 #import warnings
 #warnings.filterwarnings('ignore')
@@ -196,3 +196,33 @@ need_in = list(set(choice_in) - set(user_input))
 
 
 # if only select 1 ingredient, will choose the recipe with the lowest amount of ingredints bc all of the 0s match...
+
+
+class StreamlitApp:
+
+
+    def construct_sidebar(self):
+
+        cols2 = ["water", "bread", "pumpkin"]
+
+        st.sidebar.markdown(
+            '<p class="header-style">Iris Data Classification</p>',
+            unsafe_allow_html=True
+        )
+        
+        ingredients = st.sidebar.multiselect(
+            'What ingredients would you like to use?',
+            cols2
+        )
+            
+    
+        )
+        values = [user_input2]
+
+        return values
+
+ 
+
+
+sa = StreamlitApp()
+sa.construct_app()
