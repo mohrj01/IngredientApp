@@ -225,5 +225,5 @@ class StreamlitApp:
  
 
 
-sa = StreamlitApp()
+#sa = StreamlitApp()
 #sa.construct_app()
