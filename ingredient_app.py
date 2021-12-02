@@ -168,9 +168,9 @@ st.image(choice_photo)
 #img_bytes = Path(choice_photo).read_bytes()
 #st.image(img_bytes)
 
-from PIL import Image
-img = Image.open(choice_photo)
-st.image(img)
+#from PIL import Image
+#img = Image.open(choice_photo)
+#st.image(img)
 
 #%%
 
