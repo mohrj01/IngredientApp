@@ -224,6 +224,10 @@ class StreamlitApp:
         return self
  
 userinput = st.text_input('What ingredients')
+ingredients_input = st.multiselect(
+            'What ingredients would you like to use?',
+            cols2
+        )
 
 #sa = StreamlitApp()
 #sa.construct_app()
