@@ -216,7 +216,7 @@ class StreamlitApp:
         )
             
     
-        )
+        
         values = [user_input2]
 
         return values
