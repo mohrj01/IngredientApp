@@ -74,7 +74,8 @@ df1 = df1[["Recipe_Name", "Total_Time", "Ingredients", "RecipeID", "Orig_Ingredi
 
 
 # user input
-
+distance_columns = list(df1.columns.values)
+distance_columns = distance_columns[5:]
 user_input = st.multiselect(
             'What ingredients would you like to use?',
             distance_columns
