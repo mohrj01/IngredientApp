@@ -5,8 +5,10 @@ import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
 
+import warnings
+warnings.filterwarnings(‘ignore’)
 
-df = pd.read_csv('https://github.com/mohrj01/IngredientApp/blob/main/clean_recipes.csv',error_bad_lines=False)
+df = pd.read_csv('https://github.com/mohrj01/IngredientApp/blob/main/clean_recipes.csv')
 df.head()
 #df = pd.read_csv('/kaggle/input/recipe-ingredients-and-reviews/clean_recipes.csv', delimiter=';')
 df.dataframeName = 'clean_recipes.csv'
