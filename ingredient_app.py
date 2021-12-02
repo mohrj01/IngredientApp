@@ -150,8 +150,8 @@ most_similar_to_lebron = df2.loc[int(second_smallest)]["Recipe_Name"]
 choice = df2[df2['Recipe_Name'] == most_similar_to_lebron]
 choice = df[df['Recipe_Name'] == most_similar_to_lebron]
 st.write('Recipe using the most ingredients:', choice['Recipe_Name'])
-st.write('Author:', choice['Author'])
-st.write('Directions:', choice['Directions'])
+#st.write('Author:', choice['Author'])
+#st.write('Directions:', choice['Directions'])
 
 #%%
 
