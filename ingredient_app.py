@@ -223,7 +223,7 @@ class StreamlitApp:
 
         return self
  
-
+userinput = st.text_input('What ingredients')
 
 #sa = StreamlitApp()
 #sa.construct_app()
