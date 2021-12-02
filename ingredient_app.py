@@ -11,7 +11,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 #blob/main/
 #https://github.com/mohrj01/IngredientApp/blob/069ba3b71a509b24fdbdf16ec6bec79a2da113f4/clean_recipes.csv
 #'https://github.com/mohrj01/IngredientApp/clean_recipes.csv'
-df = pd.read_csv('clean_recipes.csv')
+df = pd.read_csv('https://github.com/mohrj01/IngredientApp/clean_recipes.csv', delimiter=';')
 df.head()
 #df = pd.read_csv('/kaggle/input/recipe-ingredients-and-reviews/clean_recipes.csv', delimiter=';')
 #df.dataframeName = 'clean_recipes.csv'
