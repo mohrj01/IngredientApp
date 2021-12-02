@@ -221,6 +221,7 @@ class StreamlitApp:
 
         return values
 
+        return self
  
 
 
