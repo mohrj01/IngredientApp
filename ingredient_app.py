@@ -157,8 +157,12 @@ choice_photo = '"'+choice['Recipe Photo']+'"'
 st.write(choice_photo)
 #st.image(choice_photo)
 
-img_bytes = Path(choice_photo).read_bytes()
-st.image(img_bytes)
+#img_bytes = Path(choice_photo).read_bytes()
+#st.image(img_bytes)
+
+from PIL import Image
+img = Image.open(choice_photo)
+st.image(img)
 #%%
 
 # ingredients this choice has in common
