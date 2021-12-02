@@ -152,7 +152,8 @@ choice = df[df['Recipe Name'] == most_similar_to_lebron]
 st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
-st.image('"',choice['Recipe Photo'],'"')
+choice_photo = '"'+choice['Recipe Photo']+'"'
+st.image(choice_photo)
 #%%
 
 # ingredients this choice has in common
