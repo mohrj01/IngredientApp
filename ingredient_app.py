@@ -169,6 +169,7 @@ st.image(choice_photo)
 #st.write("check out this [link]"choice_photo)
 
 url = choice_photo2
+st.write(choice_photo2)
 st.write("check out this [link](%s)" % url)
 st.markdown("check out this [link](%s)" % url)
 
