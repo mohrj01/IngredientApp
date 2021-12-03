@@ -173,9 +173,7 @@ st.write(choice_photo2)
 st.write("check out this [link](%s)" % url)
 st.markdown("check out this [link](%s)" % url)
 
-pip install link-button
-from link_button import link_button
-link_button('Click Me!', choice_photo2)
+
 
 #img_bytes = Path(choice_photo).read_bytes()
 #st.image(img_bytes)
