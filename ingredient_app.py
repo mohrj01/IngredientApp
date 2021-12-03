@@ -12,7 +12,7 @@ import streamlit as st
 #https://github.com/mohrj01/IngredientApp/blob/069ba3b71a509b24fdbdf16ec6bec79a2da113f4/clean_recipes.csv
 #'https://github.com/mohrj01/IngredientApp/clean_recipes.csv'
 #https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv
-
+st.write('test')
 df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
 df.head()
 #df = pd.read_csv('/kaggle/input/recipe-ingredients-and-reviews/clean_recipes.csv', delimiter=';')
@@ -28,7 +28,7 @@ df1.columns = [c.replace(' ', '_') for c in df1.columns]
 # Only keeping cookies
 df1 = df1[df1['Recipe_Name'].str.contains('Cookie', case = False)]
 df1['Orig_Ingredients'] = df1['Ingredients']
-        
+
 
 #https://stackoverflow.com/questions/54152673/python-function-to-loop-through-columns-to-replace-strings
 
@@ -37,15 +37,15 @@ import re
 df1['Ingredients'] = df1['Ingredients'].str.replace('\d+', '')
 
 def myreplace(s):
-    for ch in ['cups', 'cup', 'tablespoons', 'tablespoon', 'teaspoons', 'drops', 'drop ', 'teaspoon', 'pounds', 'pound','fluid ounce', 'ounces', 'ounce',  'fluid', 'dashes', 'dash', 'gallon', 'pinch', 
-               '/', 'and ', '.', '(', ')', '-', 
+    for ch in ['cups', 'cup', 'tablespoons', 'tablespoon', 'teaspoons', 'drops', 'drop ', 'teaspoon', 'pounds', 'pound','fluid ounce', 'ounces', 'ounce',  'fluid', 'dashes', 'dash', 'gallon', 'pinch',
+               '/', 'and ', '.', '(', ')', '-',
                'crushed', 'diced', 'cleaned', 'cubed', 'divided', 'drained', 'chopped', 'mashed', 'halved', 'julienned', 'peeled', 'segmented', 'shredded', 'rinsed', 'torn', 'soaked', 'split', 'stemmed', 'thawed', 'to taste', 'washed', 'warmed',
               'cans', 'packages', 'jars', 'bottles', 'packets', 'package', 'can ', 'jar', 'bottle', 'optional', 'packet', 'recipe', 'sheets', 'sheet',
               'whole', 'large', 'small', 'finely', 'inch', 'square', 'uncooked', 'cooked', 'frozen', 'round', 'prepared', 'any color',
               'alcoholic', 'fat free', 'low fat', 'low sodium', 'fat', 'england', 'london', '(see Note)', 'fry', 'kosher for passover', 'kosher', 'lunch', 'rating', 'raw ', 'side', 'topping thawed',
               'chill', 'gram ', 'mixed with:', 'cookies', 'cookie', 'To Layer In Jar:', 'bake', 'Topping:']:
         s = s.replace(ch, '')
-    
+
     # remove extra spaces
     s = re.sub(' +', ' ', s)
     #s = s.strip()
@@ -117,7 +117,7 @@ distance_columns = distance_columns[5:]
 
 #distance_columns = ['butter', 'salt', 'pecan']
 selected_player = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
-              
+
 
 import math
 
@@ -136,7 +136,7 @@ lebron_distance = df2.apply(euclidean_distance, axis=1)
 from scipy.spatial import distance
 
 df2_num = df2[distance_columns]
-selected_player = df2_num[df2['Recipe_Name'] == 'user input']                                   
+selected_player = df2_num[df2['Recipe_Name'] == 'user input']
 euclidean_distances = df2_num.apply(lambda row: distance.euclidean(row, selected_player), axis=1)
 # Create a new dataframe with distances.
 distance_frame = pd.DataFrame(data={"dist": euclidean_distances, "idx": euclidean_distances.index})
