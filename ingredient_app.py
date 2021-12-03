@@ -165,6 +165,7 @@ for i in choice_photo_2:
     st.write(i)
 
 st.write(choice_photo_2)
+st.photo(choice_photo_2)
 
 st.write(choice['Recipe Photo'])
 
@@ -180,7 +181,7 @@ choice_photo2 = ('"'+choice_photo+'"')
 #choice_photo = (choice['Recipe Photo']).to_string()
 st.write(choice_photo)
 st.image(choice_photo, width=400)
-st.image("https://images.media-allrecipes.com/images/79591.png", width=400)
+#st.image("https://images.media-allrecipes.com/images/79591.png", width=400)
 st.text(choice_photo)
 
 #st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
