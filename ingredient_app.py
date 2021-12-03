@@ -159,7 +159,7 @@ st.write(r.head())
 #st.write((choice['Recipe Photo'][0]))
 
 choice_photo = choice['Recipe Photo'].to_string()
-choice_photo_2 = choice['Recipe Photo'].split()
+choice_photo_2 = choice['Recipe Photo']
 
 for i in choice_photo_2:
     st.write(i)
