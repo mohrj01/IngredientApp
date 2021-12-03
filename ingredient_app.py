@@ -154,7 +154,7 @@ st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
 
-choice_photo = choice['Recipe Photo']
+choice_photo = choice['Recipe Photo'].values
 st.write(choice['Recipe Photo'])
 
 choice_photo = choice_photo[5:]
