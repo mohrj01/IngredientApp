@@ -153,6 +153,7 @@ st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
+
 r = pd.DataFrame(choice['Recipe Photo'])
 st.write(r.head())
 
@@ -163,7 +164,7 @@ choice_photo_2 = choice['Recipe Photo']
 
 for i in choice_photo_2:
     st.write(i)
-
+st.write("checkpoint1")
 st.write(choice_photo_2)
 st.photo(choice_photo_2)
 
