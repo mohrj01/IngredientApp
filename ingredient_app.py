@@ -165,6 +165,9 @@ choice_photo = choice_photo.replace(" ", "")
 st.write(choice_photo)
 st.image(choice_photo)
 
+[this is a text link](upload://choice_photo)
+[![this is an image link](choice_photo)]
+
 #img_bytes = Path(choice_photo).read_bytes()
 #st.image(img_bytes)
 
