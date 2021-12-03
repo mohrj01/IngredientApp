@@ -153,7 +153,10 @@ st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
-st.write((choice['Recipe Photo'][0]))
+r = pd.DataFrame(choice['Recipe Photo'])
+st.write(r.head())
+
+#st.write((choice['Recipe Photo'][0]))
 
 choice_photo = choice['Recipe Photo'].to_string()
 choice_photo_2 = choice['Recipe Photo'].split()
