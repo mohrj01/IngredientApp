@@ -164,9 +164,7 @@ choice_photo = choice_photo.replace(" ", "")
 #choice_photo = (choice['Recipe Photo']).to_string()
 st.write(choice_photo)
 st.image(choice_photo)
-
-[this is a text link](upload://choice_photo)
-[![this is an image link](choice_photo)]
+st.write("check out this [link](choice_photo)")
 
 #img_bytes = Path(choice_photo).read_bytes()
 #st.image(img_bytes)
