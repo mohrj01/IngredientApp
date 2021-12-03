@@ -154,8 +154,9 @@ st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
 
-choice_photo = choice['Recipe Photo'].to_string()
+choice_photo = choice['Recipe Photo']
 st.write(choice['Recipe Photo'])
+
 choice_photo = choice_photo[5:]
 #choice_photo = ('"'+choice_photo+'"')
 choice_photo = choice_photo.replace(" ", "")
