@@ -158,7 +158,7 @@ choice_photo = choice['Recipe Photo'].to_string()
 choice_photo = choice_photo[5:]
 #choice_photo = ('"'+choice_photo+'"')
 choice_photo = choice_photo.replace(" ", "")
-
+choice_photo2 = ('"'+choice_photo+'"')
 
 #choice_photo = ('"'+choice['Recipe Photo']+'"').to_string()
 #choice_photo = (choice['Recipe Photo']).to_string()
@@ -168,7 +168,7 @@ st.image(choice_photo)
 #st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
 #st.write("check out this [link]"choice_photo)
 
-url = ('"'+choice['Recipe Photo']+'"').to_string()
+url = choice_photo2
 st.write("check out this [link](%s)" % url)
 st.markdown("check out this [link](%s)" % url)
 
