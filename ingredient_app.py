@@ -1,4 +1,4 @@
-
+# imports
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt # plotting
 import numpy as np # linear algebra
@@ -14,56 +14,41 @@ st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
 st.header('Introduction')
 
+# read original data set
 df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
-
+# load pre-processed data
 import pickle as pkl
 with open("df1_ing.pkl" , "rb") as file4:
     df1 = pkl.load(file4)
 
-
-
-
-# user input
+# allow user to select between all of the possible ingredients in the cookie recipes
+# ignore the first 5 columns because not ingredient dummy variables
 distance_columns = list(df1.columns.values)
 distance_columns = distance_columns[5:]
 user_input = st.multiselect(
             'What ingredients would you like to use?',
             distance_columns
         )
-
+# output what the user selected
 st.write('You selected:', user_input)
 
 
-#user_input = ['strawberry', 'egg', 'pecan']
-#my_in = pd.DataFrame(my_in)
+# add the users selections as a row to the dataframe
 my_in = pd.DataFrame(data ={'Recipe_Name': ["user input"], 'RecipeID': [0],  'Ingredients': [user_input]})
-
-
 my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients.str.join('|').str.get_dummies())
 
-# k nearest neighbors?
-# show names
-# show missing ingredients from each one
 
-
-# if set na to -1, then  if recepie does not require ingredient: penalize 1
-#                         if recepie has ingredient: penalize 2
-#                         difference: 1
-
-# if set na to 0, then  if recepie does not require ingredient: penalize 0
-#                         if recepie has ingredient: penalize 1
-#                         difference 1
 # if set na to .5 if recepie doesn't require, penalize .5. if recepie requires, penalize .5
 # focus on finding recepies that match items you HAVE rather than match items you don't have.
 # prioritizes using as many of your items as possible
 
-# add user input to dataset, if na then 0
+# add user input to copied dataset, if na then .5 because of the reason above
 df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
-#df2 = df2.append(my_in).fillna(0)
 
-distance_columns = list(df2.columns.values)
-distance_columns = distance_columns[5:]
+
+#distance_columns = list(df2.columns.values)
+#distance_columns = distance_columns[5:]
 
 #distance_columns = ['butter', 'salt', 'pecan']
 selected_player = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
