@@ -111,7 +111,9 @@ for i in choice_photo_2:
     
 st.write("checkpoint1")
 st.write(l[0])
-st.photo(l[0])
+
+final_photo = l[0]
+st.photo(final_photo)
 
 st.write(choice['Recipe Photo'])
 
