@@ -6,7 +6,14 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import streamlit as st
 
 
-st.write('test')
+st.title('Cookie Recipe Finder')
+st.subheader('By Jessica Mohr')
+st.subheader('12/8/2021')
+st.subheader('MABA ML Final Project')
+st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
+
+st.header('Introduction')
+
 df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
 
 import pickle as pkl
@@ -114,6 +121,7 @@ st.write(l[0])
 
 final_photo = l[0]
 st.image(final_photo)
+st.caption(final_photo)
 
 st.write(choice['Recipe Photo'])
 
