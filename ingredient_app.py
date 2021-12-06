@@ -9,6 +9,7 @@ import streamlit as st
 st.write('test')
 df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
 
+import pickle as pkl
 with open("df1_ing.pkl" , "rb") as file4:
     df1 = pkl.load(file4)
 
