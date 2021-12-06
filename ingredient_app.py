@@ -7,9 +7,9 @@ import streamlit as st
 
 
 st.title('Cookie Recipe Finder')
-st.text('By Jessica Mohr')
-st.text('12/8/2021')
-st.text('MABA ML Final Project')
+st.write('By Jessica Mohr')
+st.write('12/8/2021')
+st.write('MABA ML Final Project')
 st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
 st.header('Introduction')
