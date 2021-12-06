@@ -70,3 +70,8 @@ df1.Ingredients = df1.Ingredients.apply(str).str.split(",")
 #https://stackoverflow.com/questions/43945816/convert-list-of-strings-to-dummy-variables-with-pandas
 #.add_prefix('ing_')
 df1 = df1[["Recipe_Name", "Total_Time", "Ingredients", "RecipeID", "Orig_Ingredients"]].join(df1.Ingredients.str.join('|').str.get_dummies())
+
+# export
+import pickle as pkl
+with open("df1_ing.pkl" , "wb") as file4:
+  pkl.dump(df1,file4)
