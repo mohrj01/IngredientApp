@@ -113,7 +113,7 @@ st.write("checkpoint1")
 st.write(l[0])
 
 final_photo = l[0]
-st.photo(final_photo)
+st.image(final_photo)
 
 st.write(choice['Recipe Photo'])
 
