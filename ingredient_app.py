@@ -24,11 +24,15 @@ st.write('talk about the app here')
 st.header('Ingredient Selection')
 
 # read original data set
-df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
+#df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
 # load pre-processed data
 import pickle as pkl
 with open("df1_ing.pkl" , "rb") as file4:
     df1 = pkl.load(file4)
+    
+import pickle as pkl
+with open("df_ing.pkl" , "rb") as file4:
+    df = pkl.load(file4)
 
 # allow user to select between all of the possible ingredients in the cookie recipes
 # ignore the first 5 columns because not ingredient dummy variables
