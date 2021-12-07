@@ -179,7 +179,7 @@ st.table(need_in)
 
 
 st.metric(label="Ingredients You Have", value=len(match_in))
-st.metric(label="Ingredients You Need", value=len(need_in), value_color="inverse")
+st.metric(label="Ingredients You Need", value=len(need_in))
 
 #%%
 
