@@ -46,11 +46,14 @@ user_input = st.multiselect(
 st.write('You Selected:')
 for i in user_input:
     st.write(i)
-    
-user_time = st.slider('What is the maximum time you want to spend (in hours)?', min_value=1, max_value=24)
-user_out = st.select_slider('what max', [1,3,4,5, "∞"])
 
-# if user_time specify 24, then set user_time = 105 in order to capture all non specified recipes
+# if user_time specify infinity, then set user_time = 200 in order to capture all non specified recipes
+user_time = st.select_slider('What is the maximum time you want to spend (in hours)?', [1,2,3,4,5,6,7,8,"∞"])
+if user_time == "∞":
+    user_time = 200
+user_time = int(user_time)
+
+
 
     
 st.markdown("---")
