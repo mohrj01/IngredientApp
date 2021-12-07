@@ -11,7 +11,7 @@ from scipy.spatial import distance
 
 #st.markdown(<font color=‘red’>THIS TEXT WILL BE RED</font>, unsafe_allow_html=True))
 
-mine = <span style="color:blue">some *This is Blue italic.* text</span>
+mine = '<span style="color:blue">some *This is Blue italic.* text</span>'
 st.markdown(mine)
 
 st.title('Cookie Recipe Finder')
