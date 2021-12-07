@@ -207,6 +207,15 @@ to_download = df_download.to_csv("Ingredients Needed for "+ str(name) + ".csv", 
 #st.download_button("Download Shopping List", data=to_download, mime='text/csv')
 st.download_button("download", str(need_in), file_name = "mine.csv")
 
+with open(to_download) as fp:
+    btn = st.download_button(
+        label="Download IMAGE",
+        data=fp,
+        file_name="blue-jay1.csv",
+        mime='text/csv'
+    )
+    
+
 # try plotly table to make look nicer
 #st.table(pd.DataFrame(need_in).assign(hack='').set_index('hack'))
 
