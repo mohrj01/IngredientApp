@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt # plotting
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import streamlit as st
+import math
+from scipy.spatial import distance
 
 
 st.title('Cookie Recipe Finder')
@@ -46,47 +48,38 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
 
+# select the newly added row (user input)
+selected_row = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
 
-#distance_columns = list(df2.columns.values)
-#distance_columns = distance_columns[5:]
-
-#distance_columns = ['butter', 'salt', 'pecan']
-selected_player = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
-
-
-import math
-
+# euclidean distance function for KNN
 def euclidean_distance(row):
 
     inner_value = 0
     for k in distance_columns:
-        inner_value += (row[k] - selected_player[k]) ** 2
+        inner_value += (row[k] - selected_row[k]) ** 2
     return math.sqrt(inner_value)
 
-lebron_distance = df2.apply(euclidean_distance, axis=1)
+selected_distance = df2.apply(euclidean_distance, axis=1)
 
 
-#https://www.dataquest.io/blog/k-nearest-neighbors-in-python/
-
-from scipy.spatial import distance
-
+# https://www.dataquest.io/blog/k-nearest-neighbors-in-python/
 df2_num = df2[distance_columns]
-selected_player = df2_num[df2['Recipe_Name'] == 'user input']
-euclidean_distances = df2_num.apply(lambda row: distance.euclidean(row, selected_player), axis=1)
+selected_row = df2_num[df2['Recipe_Name'] == 'user input']
+euclidean_distances = df2_num.apply(lambda row: distance.euclidean(row, selected_row), axis=1)
 # Create a new dataframe with distances.
 distance_frame = pd.DataFrame(data={"dist": euclidean_distances, "idx": euclidean_distances.index})
 #distance_frame.sort("dist", inplace=True)
 distance_frame.sort_values("dist", inplace = True)
 # Find the most similar player to lebron (the lowest distance to lebron is lebron, the second smallest is the most similar non-lebron player)
 second_smallest = distance_frame.iloc[1]["idx"]
-most_similar_to_lebron = df2.loc[int(second_smallest)]["Recipe_Name"]
+most_similar_to_selected = df2.loc[int(second_smallest)]["Recipe_Name"]
 
 
-choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_lebron]
-choice = df[df['Recipe Name'] == most_similar_to_lebron]
+choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_selected]
+choice = df[df['Recipe Name'] == most_similar_to_selected]
 st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
-st.write('Directions:', choice['Directions'])
+st.write('Directions:', choice['Directions'][1])
 
 
 r = pd.DataFrame(choice['Recipe Photo'])
