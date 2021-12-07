@@ -18,6 +18,19 @@ background-size: cover;
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
+
+
+
+##markdown example
+mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
+st.markdown(mine, unsafe_allow_html=True)
+
+st.title('Cookie Recipe Finder')
+st.write('By Jessica Mohr')
+st.write('12/8/2021')
+st.write('MABA ML Final Project')
+st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
+
 st.markdown(
     """
     <style>
@@ -31,17 +44,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-##markdown example
-mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
-st.markdown(mine, unsafe_allow_html=True)
-
-st.title('Cookie Recipe Finder')
-st.write('By Jessica Mohr')
-st.write('12/8/2021')
-st.write('MABA ML Final Project')
-st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
 st.header('Introduction')
 
