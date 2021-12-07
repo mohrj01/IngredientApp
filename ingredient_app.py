@@ -10,7 +10,7 @@ from scipy.spatial import distance
 
 ##markdown example
 mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
-st.markdown(mine, unsafe_allow_html=True)
+#st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
 st.image('https://leclerc-business-site-production.s3.amazonaws.com/uploads/2018/05/08/13/33/11/09be0c78-9eba-4786-910c-4030e6333bff/header-image.png')
@@ -125,9 +125,7 @@ for i in choice['Total Time']:
 # Print Recipe Directions
 for i in choice['Directions']:
     st.write(i)
-    
-for i in choice['combined_time']:
-    st.write(i)
+
     
 # Print Photo and caption
 choice_photo = choice['Recipe Photo']
@@ -182,7 +180,7 @@ need_in = list(set(choice_in) - set(user_input))
 #st.write('Ingredients you still need are:', need_in)
 
 
-
+st.header("Ingredient Inventory")
 col1, col2 = st.columns(2)
 col1.metric(label="Ingredients You Have", value=len(match_in))
 col2.metric(label="Ingredients You Need", value=len(need_in))
