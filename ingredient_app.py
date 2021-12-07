@@ -7,17 +7,6 @@ import streamlit as st
 import math
 from scipy.spatial import distance
 
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-background-size: cover;
-}
-</style>
-'''
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
 
 
 
@@ -26,24 +15,14 @@ mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original im
 st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
+st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fsweetgirlcookies.com%2Fabout%2Fcookie-header-2%2F&psig=AOvVaw176QzGCUtn8DzzmD3XlctE&ust=1638925727845000&source=images&cd=vfe&ved=2ahUKEwix2eufwND0AhX_gYkEHUKHBdUQjRx6BAgAEAk')
+
 st.write('By Jessica Mohr')
 st.write('12/8/2021')
 st.write('MABA ML Final Project')
 st.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
-    }
-   .sidebar .sidebar-content {
-        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 st.header('Introduction')
 
