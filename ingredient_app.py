@@ -87,7 +87,7 @@ distance_frame.sort_values("dist", inplace = True)
 second_smallest = distance_frame.iloc[1]["idx"]
 most_similar_to_selected = df2.loc[int(second_smallest)]["Recipe_Name"]
 
-df['Total Time'] = df['Total Time'].replace("X", "Unknown")
+#df['Total Time'] = df['Total Time'].replace("X", "Unknown")
 choice = df[df['Recipe Name'] == most_similar_to_selected]
 
 
@@ -108,6 +108,9 @@ for i in choice['Total Time']:
     col2.write(i)
 # Print Recipe Directions
 for i in choice['Directions']:
+    st.write(i)
+    
+for i in choice['combined_time']:
     st.write(i)
     
 # Print Photo and caption
