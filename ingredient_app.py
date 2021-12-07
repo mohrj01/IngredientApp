@@ -43,9 +43,9 @@ user_input = st.multiselect(
             distance_columns
         )
 # output what the user selected
-st.write('You Selected:')
-for i in user_input:
-    st.write(i)
+#st.write('You Selected:')
+#for i in user_input:
+#    st.write(i)
 
 # if user_time specify infinity, then set user_time = 200 in order to capture all non specified recipes
 st.header("Time Limit Selection")
