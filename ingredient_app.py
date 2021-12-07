@@ -57,7 +57,7 @@ user_time = int(user_time)
 
 
     
-st.markdown("---")
+#st.markdown("---")
 
 # add the users selections as a row to the dataframe
 my_in = pd.DataFrame(data ={'Recipe_Name': ["user input"], 'RecipeID': [0],  'Ingredients': [user_input]})
@@ -190,26 +190,10 @@ col1.table(match_in)
 col2.table(need_in)
 
 # try plotly table to make look nicer
-st.table(pd.DataFrame(need_in).assign(hack='').set_index('hack'))
-#%%
-
-# for me to fix now
-# display cook time in final result
-# display link to recipe
-
-#%%
-
-# future ideas
-# add in cook time (as user choice)
-# add in weighted KNN > user can select the one ingredient they for sure want to use, weight it heigher
-
-
-# if only select 1 ingredient, will choose the recipe with the lowest amount of ingredints bc all of the 0s match...
-
-
-
-
-#sa = StreamlitApp()
-#sa.construct_app()
+#st.table(pd.DataFrame(need_in).assign(hack='').set_index('hack'))
 
 st.image('https://sweetgirlcookies.com/wp-content/uploads/2021/08/cookie-header-1.png')
+
+
+# future ideas
+# add in weighted KNN > user can select the one ingredient they for sure want to use, weight it heigher
