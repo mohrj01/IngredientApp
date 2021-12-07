@@ -114,7 +114,7 @@ st.caption(final_photo)
 
 
 # ingredients this choice has in common
-choice_df2 = df2[df2['Recipe Name'] == most_similar_to_selected]
+choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_selected]
 choice_in = choice_df2['Ingredients']
 # choice ingredients
 #choice_in = choice['Ingredients'].astype(str).values.tolist()
