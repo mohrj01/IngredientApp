@@ -32,8 +32,10 @@ user_input = st.multiselect(
             distance_columns
         )
 # output what the user selected
-st.write('You selected:', list(user_input))
+st.write('You selected:', user_input)
 
+for i in user_input:
+    st.write(i)
 
 # add the users selections as a row to the dataframe
 my_in = pd.DataFrame(data ={'Recipe_Name': ["user input"], 'RecipeID': [0],  'Ingredients': [user_input]})
