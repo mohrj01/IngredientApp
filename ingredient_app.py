@@ -214,7 +214,7 @@ def convert_df(df):
     return df.to_csv().encode('utf-8')
 
 csv = convert_df(df_download)
-st.download_buttom("Down", csv)
+st.download_button("Down", csv)
     
 
 # try plotly table to make look nicer
