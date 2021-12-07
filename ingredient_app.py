@@ -64,10 +64,10 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
 # filter to be below user time requirements
-appended = df["combined_time"]
-df2 = df2.join(appended)
 user_time = user_time*60
-df2 = df2[df2['combined_time']<user_time]
+
+df_IDS = df[df['combined_time']<user_time]
+df2 = df2[df2.RecipeID.isin(df_IDS.RecipeID)]
 
 
 # select the newly added row (user input)
