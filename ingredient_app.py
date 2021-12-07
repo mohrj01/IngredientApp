@@ -15,7 +15,7 @@ mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original im
 st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
-st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fsweetgirlcookies.com%2Fabout%2Fcookie-header-2%2F&psig=AOvVaw176QzGCUtn8DzzmD3XlctE&ust=1638925727845000&source=images&cd=vfe&ved=2ahUKEwix2eufwND0AhX_gYkEHUKHBdUQjRx6BAgAEAk')
+st.image('https://sweetgirlcookies.com/wp-content/uploads/2021/08/cookie-header-1.png')
 
 st.write('By Jessica Mohr')
 st.write('12/8/2021')
