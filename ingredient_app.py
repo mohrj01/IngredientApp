@@ -188,6 +188,7 @@ col2.metric(label="Ingredients You Need", value=len(need_in))
 #col2.table(need_in)
 
 st.markdown("---")
+col1, col2 = st.columns(2)
 for i in match_in:
     col1.write(i)
 
