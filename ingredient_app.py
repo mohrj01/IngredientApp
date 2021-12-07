@@ -79,7 +79,7 @@ choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_selected]
 choice = df[df['Recipe Name'] == most_similar_to_selected]
 st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
-st.write('Directions:', choice['Directions'][1])
+st.write('Directions:', choice['Directions'])
 
 
 r = pd.DataFrame(choice['Recipe Photo'])
