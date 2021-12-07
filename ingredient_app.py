@@ -7,8 +7,18 @@ import streamlit as st
 import math
 from scipy.spatial import distance
 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
 
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
+##markdown example
 mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
 st.markdown(mine, unsafe_allow_html=True)
 
