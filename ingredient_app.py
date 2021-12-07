@@ -178,12 +178,7 @@ st.write('Ingredients you still need are:', need_in)
 st.table(need_in)
 
 
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
+st.metric(label="Gas price", value=len(match_in), delta=-0.5, delta_color="inverse")
 
 #%%
 
