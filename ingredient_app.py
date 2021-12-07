@@ -28,6 +28,9 @@ st.write("Jessica Mohr  |  12/08/2021  |  MABA ML Final Project  |  [Github](%s)
 
 
 st.header('Introduction')
+st.write('talk about the app here')
+
+st.header('Ingredient Selection')
 
 # read original data set
 df = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_recipes.csv', delimiter=';')
