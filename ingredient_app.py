@@ -16,6 +16,7 @@ st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
 st.image('https://sweetgirlcookies.com/wp-content/uploads/2021/08/cookie-header-1.png')
+st.image('https://leclerc-business-site-production.s3.amazonaws.com/uploads/2018/05/08/13/33/11/09be0c78-9eba-4786-910c-4030e6333bff/header-image.png')
 
 st.write('By Jessica Mohr')
 st.write('12/8/2021')
