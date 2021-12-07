@@ -211,10 +211,10 @@ my_download = ("Ingredients Needed for "+ str(name) + ".csv")
 
 @st.cache
 def convert_df(df):
-    return df.to_csv().encode('utf-8')
+    return df.to_csv(index=False).encode('utf-8')
 
 csv = convert_df(df_download)
-st.download_button("Down", csv, file_name = my_download)
+st.download_button("Download Shopping List", csv, file_name = my_download)
     
 
 # try plotly table to make look nicer
