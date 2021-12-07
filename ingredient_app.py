@@ -11,6 +11,10 @@ from scipy.spatial import distance
 
 #st.markdown(<font color=‘red’>THIS TEXT WILL BE RED</font>, unsafe_allow_html=True))
 
+original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;"</p>'
+st.markdown(original_title, unsafe_allow_html=True)
+
+
 st.title('Cookie Recipe Finder')
 st.write('By Jessica Mohr')
 st.write('12/8/2021')
