@@ -32,8 +32,9 @@ user_input = st.multiselect(
             distance_columns
         )
 # output what the user selected
-st.write('You selected:', user_input)
+#st.write('You selected:', user_input)
 
+st.write('You Selected:')
 for i in user_input:
     st.write(i)
 
