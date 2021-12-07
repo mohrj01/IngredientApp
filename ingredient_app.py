@@ -47,7 +47,7 @@ st.write('You Selected:')
 for i in user_input:
     st.write(i)
     
-user_time = st.slider('What is the maximum time you want to spend?', min_value=0, max_value=4)
+user_time = st.slider('What is the maximum time you want to spend (in hours)?', min_value=0, max_value=4)
     
 st.markdown("---")
 
@@ -63,6 +63,9 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 # add user input to copied dataset, if na then .5 because of the reason above
 df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
+# filter to be below user time requirements
+user_time = user_time*60
+df2[df2['combined_time']<user_time]
 
 # select the newly added row (user input)
 selected_row = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
