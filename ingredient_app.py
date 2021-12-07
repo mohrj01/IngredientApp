@@ -10,7 +10,7 @@ from scipy.spatial import distance
 
 
 mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
-st.markdown(mine)
+st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
 st.write('By Jessica Mohr')
