@@ -173,9 +173,9 @@ need_in = list(set(choice_in) - set(user_input))
 #print("Ingredients you still need are:")
 #print(need_in)
 
-st.write('Ingredients that match are:', match_in)
-st.write('Ingredients you still need are:', need_in)
-st.table(need_in)
+#st.write('Ingredients that match are:', match_in)
+#st.write('Ingredients you still need are:', need_in)
+
 
 
 col1, col2 = st.columns(2)
