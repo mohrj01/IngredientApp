@@ -63,6 +63,7 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 # add user input to copied dataset, if na then .5 because of the reason above
 df2 = df1.copy()
 user_time = user_time*60
+st.write(user_time)
 df_IDS = df[df['combined_time']<user_time]
 df2 = df1[df1.RecipeID.isin(df_IDS.RecipeID)]
 
