@@ -178,8 +178,9 @@ st.write('Ingredients you still need are:', need_in)
 st.table(need_in)
 
 
-st.metric(label="Ingredients You Have", value=len(match_in))
-st.metric(label="Ingredients You Need", value=len(need_in))
+col1, col2 = st.columns(2)
+col1.metric(label="Ingredients You Have", value=len(match_in))
+col2.metric(label="Ingredients You Need", value=len(need_in))
 
 #%%
 
