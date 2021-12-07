@@ -47,7 +47,7 @@ st.write('You Selected:')
 for i in user_input:
     st.write(i)
     
-user_time = st.multiselect('What is the maximum time you want to spend?', [1,2,3,4])
+user_time = st.slider('What is the maximum time you want to spend?', min_value=0, max_value=4)
     
 st.markdown("---")
 
