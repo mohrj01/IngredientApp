@@ -48,6 +48,7 @@ for i in user_input:
     st.write(i)
 
 # if user_time specify infinity, then set user_time = 200 in order to capture all non specified recipes
+st.header("Time Limit Selection")
 user_time = st.select_slider('What is the maximum time you want to spend (in hours)?', [1,2,3,4,5,6,7,8,"∞"])
 if user_time == "∞":
     user_time = 200
@@ -67,20 +68,14 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 # focus on finding recepies that match items you HAVE rather than match items you don't have.
 # prioritizes using as many of your items as possible
 
-# add user input to copied dataset, if na then .5 because of the reason above
+# copy dataset
 df2 = df1.copy()
+# filter to be below user time requirements
 user_time = user_time*60
-st.write(user_time)
 df_IDS = df[df['combined_time']<user_time]
 df2 = df1[df1.RecipeID.isin(df_IDS.RecipeID)]
-
+# add user input to copied dataset, if na then .5 because of the reason above
 df2 = df2.append(my_in).fillna(.5)
-
-st.write(df2.shape)
-# filter to be below user time requirements
-
-
-
 
 
 # select the newly added row (user input)
