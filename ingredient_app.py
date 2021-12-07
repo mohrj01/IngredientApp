@@ -47,6 +47,8 @@ st.write('You Selected:')
 for i in user_input:
     st.write(i)
     
+user_time = st.multiselect('What is the maximum time you want to spend?', [1,2,3,4])
+    
 st.markdown("---")
 
 # add the users selections as a row to the dataframe
