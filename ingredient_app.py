@@ -64,8 +64,8 @@ my_in = my_in[["Recipe_Name", "RecipeID", "Ingredients"]].join(my_in.Ingredients
 df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
 # filter to be below user time requirements
-append = df["combined_time"]
-df2 = df2.join(append)
+appended = df["combined_time"]
+df2 = df2.join(appended)
 user_time = user_time*60
 df2 = df2[df2['combined_time']<user_time]
 
