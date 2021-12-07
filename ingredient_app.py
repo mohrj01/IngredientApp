@@ -175,7 +175,7 @@ need_in = list(set(choice_in) - set(user_input))
 
 st.write('Ingredients that match are:', match_in)
 st.write('Ingredients you still need are:', need_in)
-
+st.table(need_in)
 
 
 
