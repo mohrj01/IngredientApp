@@ -178,7 +178,8 @@ st.write('Ingredients you still need are:', need_in)
 st.table(need_in)
 
 
-st.metric(label="Gas price", value=len(match_in), delta=-0.5, delta_color="inverse")
+st.metric(label="Ingredients You Have", value=len(match_in))
+st.metric(label="Ingredients You Need", value=len(need_in), value_color="inverse")
 
 #%%
 
