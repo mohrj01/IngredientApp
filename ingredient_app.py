@@ -213,7 +213,7 @@ name = name.replace("'", '')
 def convert_df(df):
     return df.to_csv().encode('utf-8')
 
-csv = convert_df(name)
+csv = convert_df(df_download)
 st.download_buttom("Down", csv)
     
 
