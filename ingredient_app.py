@@ -81,13 +81,14 @@ st.write('Recipe using the most ingredients:', choice['Recipe Name'])
 st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
+col1, col2 = st.columns(2)
 # Print Recipe Name
-st.write("Recipe using the most ingredients:")
+col1.st.write("Recipe using the most ingredients:")
 for i in choice['Recipe Name']:
-    st.write(i)
+    col1.st.write(i)
 # Print Recipe Author
 for i in choice['Recipe Name']:
-    st.write(i)
+    col2.st.write(i)
 # Print Recipe Directions
 for i in choice['Directions']:
     st.write(i)
