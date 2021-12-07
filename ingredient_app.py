@@ -203,8 +203,9 @@ name = name.replace(']', '')
 name = name.replace("'", '')
 
 df_download.to_csv("Ingredients Needed for "+ str(name) + ".csv", index = False)
+my_download = ("Ingredients Needed for "+ str(name) + ".csv")
 
-st.download_button("Download Shopping List", data="Ingredients Needed for "+ str(name) + ".csv", mime='text/csv')
+st.download_button("Download Shopping List", data=my_download, mime='text/csv')
 st.download_button("download", str(need_in), file_name = "mine.csv")
 
 with open(to_download) as fp:
