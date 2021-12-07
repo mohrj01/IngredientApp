@@ -84,7 +84,7 @@ second_smallest = distance_frame.iloc[1]["idx"]
 most_similar_to_selected = df2.loc[int(second_smallest)]["Recipe_Name"]
 
 df = df['Total Time'].replace("X", "Unknown")
-choice = df[df['Recipe Name'] == most_similar_to_selected]
+choice = df[df['Recipe_Name'] == most_similar_to_selected]
 
 
 # Write output
