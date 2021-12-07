@@ -67,7 +67,7 @@ df2 = df2.append(my_in).fillna(.5)
 user_time = user_time*60
 
 df_IDS = df[df['combined_time']<user_time]
-df2 = df2[df2.RecipeID.isin(df_IDS.RecipeID)]
+#df2 = df2[df2.RecipeID.isin(df_IDS.RecipeID)]
 
 
 # select the newly added row (user input)
