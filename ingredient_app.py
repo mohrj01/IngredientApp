@@ -9,7 +9,7 @@ from scipy.spatial import distance
 
 
 
-st.markdown(<font color=‘red’>THIS TEXT WILL BE RED</font>, unsafe_allow_html=True))
+#st.markdown(<font color=‘red’>THIS TEXT WILL BE RED</font>, unsafe_allow_html=True))
 
 st.title('Cookie Recipe Finder')
 st.write('By Jessica Mohr')
@@ -40,6 +40,8 @@ user_input = st.multiselect(
 st.write('You Selected:')
 for i in user_input:
     st.write(i)
+    
+st.markdown("---")
 
 # add the users selections as a row to the dataframe
 my_in = pd.DataFrame(data ={'Recipe_Name': ["user input"], 'RecipeID': [0],  'Ingredients': [user_input]})
