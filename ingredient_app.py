@@ -187,10 +187,10 @@ col2.metric(label="Ingredients You Need", value=len(need_in))
 col1.table(match_in)
 col2.table(need_in)
 
+
 # Create download CSV
 dict = {"Ingredients Needed": need_in}
 df_download = pd.DataFrame(dict)
-
 choice_in = choice['Ingredients']
 
 name = []
@@ -202,19 +202,14 @@ name = name.replace('[', '')
 name = name.replace(']', '')
 name = name.replace("'", '')
 
-#df_download.to_csv("Ingredients Needed for "+ str(name) + ".csv", index = False)
 my_download = ("Ingredients Needed for "+ str(name) + ".csv")
-
-#st.download_button("Download Shopping List", data=my_download, mime='text/csv')
-#st.download_button("download", str(need_in), file_name = "mine.csv")
-
 
 @st.cache
 def convert_df(df):
     return df.to_csv(index=False).encode('utf-8')
 
 csv = convert_df(df_download)
-st.download_button("Download Shopping List", csv, file_name = my_download)
+col2.download_button("Download Shopping List", csv, file_name = my_download)
     
 
 # try plotly table to make look nicer
