@@ -82,21 +82,16 @@ st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
 # Print Recipe Name
-for i in choice['Directions']:
+for i in choice['Recipe Name']:
     st.write(i)
 # Print Recipe Author
-list1=[]
-for i in choice['Directions']:
-    list1.append(i)
+for i in choice['Author']:
     st.write(i)
 # Print Recipe Directions
-list3=[]
 for i in choice['Directions']:
-    list3.append(i)
     st.write(i)
     
-st.write("3 directions above")
-st.write(list1[0])
+
 
 r = pd.DataFrame(choice['Recipe Photo'])
 st.write(r.head())
