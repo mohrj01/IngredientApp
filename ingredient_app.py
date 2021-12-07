@@ -99,6 +99,7 @@ for i in choice['Recipe Name']:
 for i in choice['Author']:
     col2.write(i)
 # Print total time
+choice = choice['Total Time'].replace("X", "Unknown")
 for i in choice['Total Time']:
     col2.write(i)
 # Print Recipe Directions
