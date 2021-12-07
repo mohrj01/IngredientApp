@@ -8,28 +8,19 @@ import math
 from scipy.spatial import distance
 
 
-
-
 ##markdown example
 mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
 st.markdown(mine, unsafe_allow_html=True)
 
 st.title('Cookie Recipe Finder')
 st.image('https://leclerc-business-site-production.s3.amazonaws.com/uploads/2018/05/08/13/33/11/09be0c78-9eba-4786-910c-4030e6333bff/header-image.png')
-
 st.write("Jessica Mohr  |  12/08/2021  |  MABA ML Final Project  |  [Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
-#col1, col2, col3, col4 = st.columns(4)
-#col1.write('Jessica Mohr')
-#col2.write('12/8/2021')
-#col3.write('MABA ML Final Project')
-#col4.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
-
-
-
+# INTRODUCTION
 st.header('Introduction')
 st.write('talk about the app here')
 
+# INGREDIENT SELECTION
 st.header('Ingredient Selection')
 
 # read original data set
@@ -48,8 +39,6 @@ user_input = st.multiselect(
             distance_columns
         )
 # output what the user selected
-#st.write('You selected:', user_input)
-
 st.write('You Selected:')
 for i in user_input:
     st.write(i)
@@ -83,27 +72,24 @@ def euclidean_distance(row):
 selected_distance = df2.apply(euclidean_distance, axis=1)
 
 
-# https://www.dataquest.io/blog/k-nearest-neighbors-in-python/
+# Reference: https://www.dataquest.io/blog/k-nearest-neighbors-in-python/
 df2_num = df2[distance_columns]
 selected_row = df2_num[df2['Recipe_Name'] == 'user input']
 euclidean_distances = df2_num.apply(lambda row: distance.euclidean(row, selected_row), axis=1)
 # Create a new dataframe with distances.
 distance_frame = pd.DataFrame(data={"dist": euclidean_distances, "idx": euclidean_distances.index})
-#distance_frame.sort("dist", inplace=True)
 distance_frame.sort_values("dist", inplace = True)
-# Find the most similar player to lebron (the lowest distance to lebron is lebron, the second smallest is the most similar non-lebron player)
+# Find the most similar player to user's choice (the lowest distance to their choice is their choice, the second smallest is the most similar non-user choice)
 second_smallest = distance_frame.iloc[1]["idx"]
 most_similar_to_selected = df2.loc[int(second_smallest)]["Recipe_Name"]
 
-
-choice_df2 = df2[df2['Recipe_Name'] == most_similar_to_selected]
 choice = df[df['Recipe Name'] == most_similar_to_selected]
-st.write('Recipe using the most ingredients:', choice['Recipe Name'])
-st.write('Author:', choice['Author'])
-st.write('Directions:', choice['Directions'])
 
+
+# Write output
+st.header("Cookie Recipe Result")
+# Print Recipe Info
 col1, col2 = st.columns(2)
-# Print Recipe Name
 col1.write("Recipe using the most ingredients:")
 col1.write("Author:")
 for i in choice['Recipe Name']:
@@ -117,57 +103,17 @@ for i in choice['Directions']:
     
 
 
-r = pd.DataFrame(choice['Recipe Photo'])
-st.write(r.head())
-
-#st.write((choice['Recipe Photo'][0]))
-
-choice_photo = choice['Recipe Photo'].to_string()
-choice_photo_2 = choice['Recipe Photo']
+choice_photo = choice['Recipe Photo']
 l=[]
-for i in choice_photo_2:
+for i in choice_photo:
     l.append(i)
     st.write(i)
     
-st.write(l[0])
-
 final_photo = l[0]
 st.image(final_photo)
 st.caption(final_photo)
 
-st.write(choice['Recipe Photo'])
 
-#choice_photo_2 = choice_photo[:5]
-
-
-choice_photo = choice_photo[5:]
-#choice_photo = ('"'+choice_photo+'"')
-choice_photo = choice_photo.replace(" ", "")
-choice_photo2 = ('"'+choice_photo+'"')
-
-#choice_photo = ('"'+choice['Recipe Photo']+'"').to_string()
-#choice_photo = (choice['Recipe Photo']).to_string()
-st.write(choice_photo)
-#st.image(choice_photo, width=400)
-#st.image("https://images.media-allrecipes.com/images/79591.png", width=400)
-st.text(choice_photo)
-
-#st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
-#st.write("check out this [link]"choice_photo)
-
-url = choice_photo2
-st.write(choice_photo2)
-st.write("check out this [link](%s)" % url)
-st.markdown("check out this [link](%s)" % url)
-
-
-
-#img_bytes = Path(choice_photo).read_bytes()
-#st.image(img_bytes)
-
-#from PIL import Image
-#img = Image.open(choice_photo)
-#st.image(img)
 
 #%%
 
