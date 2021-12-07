@@ -184,8 +184,14 @@ st.header("Ingredient Inventory")
 col1, col2 = st.columns(2)
 col1.metric(label="Ingredients You Have", value=len(match_in))
 col2.metric(label="Ingredients You Need", value=len(need_in))
-col1.table(match_in)
-col2.table(need_in)
+#col1.table(match_in)
+#col2.table(need_in)
+
+for i in match_in:
+    col1.write(i)
+
+for i in need_in:
+    col2.write(i)
 
 
 # Create download CSV
