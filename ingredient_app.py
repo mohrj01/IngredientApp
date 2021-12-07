@@ -86,7 +86,8 @@ St.write('Recipe using the most ingredients:')
 for i in choice['Recipe Name']:
     st.write(i)
 # Print Recipe Author
-st.write('Author:', for i in choice['Author']: i)
+for i in choice['Recipe Name']:
+    st.write(i)
 # Print Recipe Directions
 for i in choice['Directions']:
     st.write(i)
