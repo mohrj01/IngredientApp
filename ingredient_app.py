@@ -32,7 +32,7 @@ user_input = st.multiselect(
             distance_columns
         )
 # output what the user selected
-st.write('You selected:', user_input)
+st.write('You selected:', list(user_input))
 
 
 # add the users selections as a row to the dataframe
@@ -108,7 +108,6 @@ for i in choice_photo_2:
     l.append(i)
     st.write(i)
     
-st.write("checkpoint1")
 st.write(l[0])
 
 final_photo = l[0]
