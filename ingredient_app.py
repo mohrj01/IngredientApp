@@ -65,7 +65,7 @@ df2 = df1.copy()
 df2 = df2.append(my_in).fillna(.5)
 # filter to be below user time requirements
 user_time = user_time*60
-df2[df2['combined_time']<user_time]
+df2 = df2[df2['combined_time']<user_time]
 
 # select the newly added row (user input)
 selected_row = df2[df2['Recipe_Name'] == 'user input'].iloc[0]
