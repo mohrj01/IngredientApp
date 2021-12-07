@@ -184,6 +184,8 @@ col2.metric(label="Ingredients You Need", value=len(need_in))
 col1.table(match_in)
 col2.table(need_in)
 
+
+st.table(need_in.assign(hack='').set_index('hack'))
 #%%
 
 # for me to fix now
