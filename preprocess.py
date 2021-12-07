@@ -71,7 +71,37 @@ df1.Ingredients = df1.Ingredients.apply(str).str.split(",")
 #.add_prefix('ing_')
 df1 = df1[["Recipe_Name", "Total_Time", "Ingredients", "RecipeID", "Orig_Ingredients"]].join(df1.Ingredients.str.join('|').str.get_dummies())
 
+
+# Creating Time Variables
+df = df[df['Recipe Name'].str.contains('Cookie', case = False)]
+
+df['Total Time'] = df['Total Time'].replace("X", "Unknown")
+df['Total Time'] = df['Total Time'].replace("1 d", "23 h")
+df['Total Time'] = df['Total Time'].replace("Unknown", "23 h 59 m")
+
+df["TT1"] = "0 h "+ df[df["Total Time"].str.contains('h')==False]['Total Time']
+df["TT2"] = df[df["Total Time"].str.contains('m')==False]['Total Time'] + " 0 m"
+
+df.loc[df["TT1"].isnull(), "TT1"] = df["TT2"]
+df.loc[df["TT1"].isnull(), "TT1"] = df["Total Time"]
+
+df[df["Total Time"].str.contains('h')==False]
+
+df['Total Time'] = df['Total Time'].replace("23 h 59 m", "Unknown")
+
+df[['hours','minutes']] = df.TT1.str.split('h', expand=True)
+df['hours'] = df['hours'].str.replace('\D', '')
+df['minutes'] = df['minutes'].str.replace('\D', '')
+
+df['hours']=pd.to_numeric(df['hours'])
+df['minutes']=pd.to_numeric(df['minutes'])
+df['combined_time'] = df['hours']*60 + df['minutes']
+
+
 # export
 import pickle as pkl
 with open("df1_ing.pkl" , "wb") as file4:
   pkl.dump(df1,file4)
+
+with open("df_ing.pkl" , "wb") as file4:
+  pkl.dump(df,file4)
