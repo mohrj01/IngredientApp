@@ -49,7 +49,7 @@ for i in user_input:
 
 # if user_time specify infinity, then set user_time = 200 in order to capture all non specified recipes
 st.header("Time Limit Selection")
-user_time = st.select_slider('What is the maximum time you want to spend (in hours)?', [1,2,3,4,5,6,7,8,"∞"], help("Select infinity to show recipes with no time indicated")
+user_time = st.select_slider('What is the maximum time you want to spend (in hours)?', [1,2,3,4,5,6,7,8,"∞"], help("Select infinity to show recipes with no time indicated"))
 if user_time == "∞":
     user_time = 200
 user_time = int(user_time)
