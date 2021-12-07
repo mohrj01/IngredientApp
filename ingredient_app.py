@@ -101,21 +101,17 @@ for i in choice['Author']:
 for i in choice['Directions']:
     st.write(i)
     
-
-
+# Print Photo and caption
 choice_photo = choice['Recipe Photo']
 l=[]
 for i in choice_photo:
     l.append(i)
-    st.write(i)
     
 final_photo = l[0]
 st.image(final_photo)
 st.caption(final_photo)
 
 
-
-#%%
 
 # ingredients this choice has in common
 choice_in = choice_df2['Ingredients']
