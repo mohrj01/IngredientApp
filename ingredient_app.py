@@ -8,6 +8,9 @@ import math
 from scipy.spatial import distance
 
 
+
+<font color=‘red’>THIS TEXT WILL BE RED</font>, unsafe_allow_html=True)
+
 st.title('Cookie Recipe Finder')
 st.write('By Jessica Mohr')
 st.write('12/8/2021')
