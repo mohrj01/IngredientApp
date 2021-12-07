@@ -187,15 +187,6 @@ col2.metric(label="Ingredients You Need", value=len(need_in))
 #col1.table(match_in)
 #col2.table(need_in)
 
-st.markdown("---")
-col1, col2 = st.columns(2)
-for i in match_in:
-    col1.write(i)
-
-for i in need_in:
-    col2.write(i)
-
-
 # Create download CSV
 dict = {"Ingredients Needed": need_in}
 df_download = pd.DataFrame(dict)
@@ -218,6 +209,17 @@ def convert_df(df):
 
 csv = convert_df(df_download)
 col2.download_button("Download Shopping List", csv, file_name = my_download)
+
+st.markdown("---")
+col1, col2 = st.columns(2)
+for i in match_in:
+    col1.write(i)
+
+for i in need_in:
+    col2.write(i)
+
+
+
     
 
 # try plotly table to make look nicer
