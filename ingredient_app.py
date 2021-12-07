@@ -82,6 +82,15 @@ st.write('Author:', choice['Author'])
 st.write('Directions:', choice['Directions'])
 
 
+list1=[]
+for i in choice['Directions']:
+    list1.append(i)
+    st.write(i)
+    
+st.write("checkpoint1")
+st.write(list1[0])
+
+
 r = pd.DataFrame(choice['Recipe Photo'])
 st.write(r.head())
 
@@ -184,7 +193,7 @@ col2.metric(label="Ingredients You Need", value=len(need_in))
 col1.table(match_in)
 col2.table(need_in)
 
-
+# try plotly table to make look nicer
 st.table(pd.DataFrame(need_in).assign(hack='').set_index('hack'))
 #%%
 
