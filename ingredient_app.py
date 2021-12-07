@@ -135,7 +135,7 @@ for i in choice_photo:
     
 final_photo = l[0]
 st.image(final_photo)
-st.caption(final_photo)
+#st.caption(final_photo)
 
 
 
