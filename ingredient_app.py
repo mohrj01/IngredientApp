@@ -20,7 +20,7 @@ st.image('https://leclerc-business-site-production.s3.amazonaws.com/uploads/2018
 st.write("Jessica Mohr  |  12/08/2021  |  MABA ML Final Project  |  [Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
 col1, col2, col3, col4 = st.columns(4)
-col1.write('By Jessica Mohr')
+col1.write('Jessica Mohr')
 col2.write('12/8/2021')
 col3.write('MABA ML Final Project')
 col4.write("[Github](%s)" % "https://github.com/mohrj01/IngredientApp")
