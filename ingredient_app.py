@@ -205,7 +205,7 @@ name = name.replace("'", '')
 to_download = df_download.to_csv("Ingredients Needed for "+ str(name) + ".csv", index = False)
 
 #st.download_button("Download Shopping List", data=to_download, mime='text/csv')
-st.download_button("download", str(need_in), filename = "mine.csv")
+st.download_button("download", str(need_in), file_name = "mine.csv")
 
 # try plotly table to make look nicer
 #st.table(pd.DataFrame(need_in).assign(hack='').set_index('hack'))
