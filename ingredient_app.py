@@ -47,7 +47,11 @@ st.write('You Selected:')
 for i in user_input:
     st.write(i)
     
-user_time = st.slider('What is the maximum time you want to spend (in hours)?', min_value=0, max_value=4)
+user_time = st.slider('What is the maximum time you want to spend (in hours)?', min_value=1, max_value=24)
+user_out = st.select_slider('what max', [1,3,4,5, "none"])
+
+# if user_time specify 24, then set user_time = 105 in order to capture all non specified recipes
+
     
 st.markdown("---")
 
