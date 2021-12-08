@@ -14,8 +14,12 @@ st.write("Jessica Mohr  |  12/08/2021  |  MABA ML Final Project  |  [Github](%s)
 
 # INTRODUCTION
 st.header('Introduction')
-st.write('This app will take two user inputs: the ingredients they wish to use in their cookies and the maximum amount of time they have to make their cookies.'
-         'The ')
+st.write('This app will take two user inputs: the ingredients they wish to use in their cookies and the maximum amount of time they have to make their cookies. '
+         "The model will then filter down to recipes within the user's time limit and apply K Nearest Neighbors to their ingredient selection in order to find "
+         "the recipe that uses the largest amount of their ingredients. The model prioritiezes using as many of the user inputed ingredients as possible and "
+         "does not punish recipes in which the user is missing many ingredients. The output is a single recipe, with author, time to cook, average rating, "
+         "directions, and photo. A list is also included of the ingredients the user has that match the requirements of the recipe and a list of the ingredients "
+         "that the user still needs to acquire. A download button above the later list provides an excel file of the ingredients the user needs to purchase (their shopping list)."
 
 # INGREDIENT SELECTION
 st.header('Ingredient Selection')
