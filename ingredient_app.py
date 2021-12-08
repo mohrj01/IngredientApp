@@ -120,8 +120,9 @@ for i in choice['Recipe Name']:
 for i in choice['Author']:
     col2.write(i)
 # Print total time
-for i in choice['Total Time']:
-    col2.write(i)
+#for i in choice['Total Time']:
+#    col2.write(i)
+col2.metric(label="Ingredients You Have", value=choice['Total Time'])
 # Print Recipe Directions
 for i in choice['Directions']:
     st.write(i)
