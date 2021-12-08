@@ -97,6 +97,13 @@ df['hours']=pd.to_numeric(df['hours'])
 df['minutes']=pd.to_numeric(df['minutes'])
 df['combined_time'] = df['hours']*60 + df['minutes']
 
+# Add ratings
+df_rev = pd.read_csv('https://raw.githubusercontent.com/mohrj01/IngredientApp/master/clean_reviews_reduce.csv', delimiter=',')
+ratings = df_rev.groupby(['RecipeID'], as_index = False)['Rate'].mean()
+df = df.merge(ratings, how = "left")
+
+df = df.round({'Rate': 2})
+df['Rate'] = df['Rate'].fillna("No Ratings")
 
 # export
 import pickle as pkl
