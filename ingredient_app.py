@@ -7,18 +7,15 @@ import streamlit as st
 import math
 from scipy.spatial import distance
 
-
-##markdown example
-mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
-#st.markdown(mine, unsafe_allow_html=True)
-
+# Title
 st.title('Cookie Recipe Finder')
 st.image('https://leclerc-business-site-production.s3.amazonaws.com/uploads/2018/05/08/13/33/11/09be0c78-9eba-4786-910c-4030e6333bff/header-image.png')
 st.write("Jessica Mohr  |  12/08/2021  |  MABA ML Final Project  |  [Github](%s)" % "https://github.com/mohrj01/IngredientApp")
 
 # INTRODUCTION
 st.header('Introduction')
-st.write('talk about the app here')
+st.write('This app will take two user inputs: the ingredients they wish to use in their cookies and the maximum amount of time they have to make their cookies.'
+         'The ')
 
 # INGREDIENT SELECTION
 st.header('Ingredient Selection')
@@ -234,3 +231,8 @@ st.image('https://sweetgirlcookies.com/wp-content/uploads/2021/08/cookie-header-
 
 # future ideas
 # add in weighted KNN > user can select the one ingredient they for sure want to use, weight it heigher
+
+
+##markdown example
+# mine = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
+#st.markdown(mine, unsafe_allow_html=True)
