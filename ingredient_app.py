@@ -19,7 +19,7 @@ st.write('This app will take two user inputs: the ingredients they wish to use i
          "the recipe that uses the largest amount of their ingredients. The model prioritiezes using as many of the user inputed ingredients as possible and "
          "does not punish recipes in which the user is missing many ingredients. The output is a single recipe, with author, time to cook, average rating, "
          "directions, and photo. A list is also included of the ingredients the user has that match the requirements of the recipe and a list of the ingredients "
-         "that the user still needs to acquire. A download button above the later list provides an excel file of the ingredients the user needs to purchase (their shopping list)."
+         "that the user still needs to acquire. A download button above the later list provides an excel file of the ingredients the user needs to purchase (their shopping list).")
 
 # INGREDIENT SELECTION
 st.header('Ingredient Selection')
