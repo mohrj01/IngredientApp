@@ -114,15 +114,18 @@ col1, col2 = st.columns(2)
 col1.write("Recipe using the most ingredients:")
 col1.write("Author:")
 col1.write("Time to Make:")
+col1.write("Average Rating:")
 for i in choice['Recipe Name']:
     col2.write(i)
 # Print Recipe Author
 for i in choice['Author']:
     col2.write(i)
 # Print total time
-#for i in choice['Total Time']:
-#    col2.write(i)
-col2.metric(label="Ingredients You Have", value=choice['Total Time'])
+for i in choice['Total Time']:
+    col2.write(i)
+# Print Rating
+for i in choice['Rate']:
+    col2.write(i)
 # Print Recipe Directions
 for i in choice['Directions']:
     st.write(i)
